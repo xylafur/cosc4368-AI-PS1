@@ -15,7 +15,7 @@ fn get_node_defs() -> Vec<&'static str> {
     return node_defs;
 }
 
-struct Node <'a> {
+pub struct Node <'a> {
     value: u32,
     name: &'a str,
     num_children: u32,
@@ -83,16 +83,14 @@ fn print_nodes(nodes: Vec<Node>){
     }
 }
 
-fn print_node_map(node_map: HashMap<&str, Node>){
+pub fn print_node_map(node_map: HashMap<&str, Node>){
     for (name, node_info) in &node_map {
         print_node(&node_info);
     }
 }
 
-fn main(){
+pub fn obtain_nodes() -> HashMap<&'static str, Node<'static>> {
     let node_defs: Vec<&'static str> = get_node_defs();
-    let nodes: Vec<Node> = create_nodes(node_defs);
-
-    let node_map: HashMap<&str, Node> = get_node_map(nodes);
-    print_node_map(node_map);
+    let _nodes: Vec<Node> = create_nodes(node_defs);
+    return get_node_map(_nodes);
 }
