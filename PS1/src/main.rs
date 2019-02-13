@@ -12,6 +12,7 @@ fn main(){
     //modules::nodes::print_node_map(node_map);
 
     //bfs("S", goals, node_map);
-    dfs("S", goals, node_map);
+    //dfs("S", goals, node_map);
+    bestfs("S", goals, node_map);
 
 }

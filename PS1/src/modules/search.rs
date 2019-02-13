@@ -28,12 +28,60 @@ fn do_insert(search_func: &'static str, name : &'static str,
         },
         //in dfs, this new node should be the next thing we expand, so we add
         //it to the end of the list since thats what we expand next
-        "dfs" => {
+        "dfs" | "bestfs" => {
             let mut open_cpy = open.clone();
             open_cpy.push(name);
             return open_cpy
         },
         _ => return Vec::new(),
+    }
+}
+
+/*  In this function we find the next node that we want to explore based on the
+ *  particular search function that we are using.  We return the name of that
+ *  node and remove it from the open list if we find it.
+ *
+ *  If we do not find a valid node (because the open list is empty) then we
+ *  return an empty string.  In this case, the open list is left unchanged
+ */
+fn choose_node(search_func: &'static str, open_list: &mut Vec<&'static str>,
+               node_map: &HashMap<&'static str, Node<'static>>)
+                    -> &'static str {
+    match search_func {
+        "bfs" | "dfs" => {
+        //Get the next element from the open list
+            let top = open_list.pop();
+            //If there are no elements, then we didn't find a goal!
+            if top == None{
+                return "";
+            }
+
+            //Is this node a goal state?  If so say so and return true
+            return top.unwrap_or("");
+        },
+        "bestfs" => {
+            if open_list.len() == 0 {
+                println!("Found empty open list!");
+                return "";
+            }
+            let mut min_name: &'static str = node_map[open_list[0]].name;
+            let mut min_val: u32 = node_map[open_list[0]].value;
+            let mut min_index: u32 = 0;
+            let mut ii = 0;
+
+            for (ii, each) in open_list.clone().iter().enumerate() {
+                if node_map[each].value < min_val {
+                    min_index = ii as u32;
+                    min_val = node_map[each].value;
+                    min_name = each;
+                }
+            }
+            println!("Found min: {}", min_name);
+
+            return min_name;
+
+        },
+        _ => return "",
     }
 }
 
@@ -49,16 +97,13 @@ fn generic_search(start_node: &'static str, goal_states: Vec<&'static str>,
     let mut ret: bool = true;
 
     while open.len() > 0 {
-        //Get the next element from the open list
-        let top = open.pop();
-        //If there are no elements, then we didn't find a goal!
-        if top == None{
+        //chose the next node based on our search function
+        let current = choose_node(search_func, &mut open, &node_map);
+        if current == "" {
             ret = false;
             break;
         }
 
-        //Is this node a goal state?  If so say so and return true
-        let current: &'static str = top.unwrap_or("");
         println!("Current: {}", current);
         if goal_states.contains(&current) {
             println!("Encountered Goal state {}", current);
@@ -95,4 +140,11 @@ pub fn dfs(start_node: &'static str, goal_states: Vec<&'static str>,
     println!("Running Depth First Search!");
 
     return generic_search(start_node, goal_states, "dfs", node_map);
+}
+
+pub fn bestfs(start_node: &'static str, goal_states: Vec<&'static str>,
+           node_map: HashMap<&'static str, Node<'static>>) -> bool {
+    println!("Running Best First Search!");
+
+    return generic_search(start_node, goal_states, "bestfs", node_map);
 }
