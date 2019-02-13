@@ -15,11 +15,15 @@ fn get_node_defs() -> Vec<&'static str> {
     return node_defs;
 }
 
+pub fn get_goal_states() -> Vec<&'static str> {
+    return vec!["G1", "G2"]
+}
+
 pub struct Node <'a> {
-    value: u32,
-    name: &'a str,
-    num_children: u32,
-    children_info: Vec<(u32, &'a str)>,
+    pub value: u32,
+    pub name: &'a str,
+    pub num_children: u32,
+    pub children_info: Vec<(u32, &'a str)>,
 }
 
 /*  This function grabs all of the pieces from the string describing a node and
