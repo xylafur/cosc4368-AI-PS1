@@ -131,8 +131,27 @@ fn generic_search(start_node: &'static str, goal_states: Vec<&'static str>,
     return ret;
 }
 
-fn queue_empty(queue: PriorityQueue<&'static str, u32>) -> bool {
+fn remove_from_vec(vector: &mut Vec<&'static str>, which: & &'static str){
+    for (ii, node) in vector.clone().iter().enumerate() {
+        if node == which {
+            vector.remove(ii);
+            break;
+        }
+    }
+}
 
+fn queue_empty(queue: & PriorityQueue<&'static str, i32>) -> bool {
+    if let Some(ref top) = queue.peek() {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+fn print_queue(queue: &PriorityQueue<&'static str, i32>){
+    for each in queue.clone().into_sorted_iter() {
+        println!("{}: {}", each.1, each.0);
+    }
 }
 
 fn A_star_search(start_node: &'static str, goal_states: Vec<&'static str>,
@@ -154,20 +173,66 @@ fn A_star_search(start_node: &'static str, goal_states: Vec<&'static str>,
      *              plus the supposed cost to the goal node
      */
 
-    let mut queue: PriorityQueue<&'static str, u32> =  PriorityQueue::new();
+    let mut expanded: Vec<&'static str> = Vec::new();
+    let mut closed: Vec<&'static str> = Vec::new();
+    let mut open = node_map.keys().cloned().filter(|x| *x == start_node)
+                 .collect::<Vec<&'static str>>();
+
+
+    let mut queue: PriorityQueue<&'static str, i32> =  PriorityQueue::new();
     let mut cost: HashMap<&'static str, u32> = HashMap::new();
-    let mut origin: HashMap<&'static str, u32> = HashMap::new();
+    let mut origin: HashMap<&'static str, &'static str> = HashMap::new();
+    let mut ret = false;
 
-    queue.push(start_node, 0);
+    //I am pushing the negative of the number, just because the priority queue
+    //that I'm using pops off the maximum (I guess as a priority queue should)
+    //and can't be switched.  To get around that just make all the values
+    //negative and now the lowest number (the one we want) is actually the greatest!
+    queue.push(start_node, -(node_map[start_node].value as i32));
     cost.insert(start_node, 0);
-    origin.insert(start_node, 0);
+    origin.insert(start_node, "");
 
-    while ! queue_empty(queue){
+    while ! queue_empty(& queue){
+        //print_queue(&queue);
 
+        let current = queue.pop().unwrap();
+        let current_node: &'static str = current.0;
+
+        //remove our selected node (highest priority) from the open list
+        remove_from_vec(&mut open, & current_node);
+
+        if goal_states.contains(&current_node) {
+            println!("Encountered Goal state {}", current_node);
+            ret = true;
+            break;
+        }
+
+        //I still need this guy.. so lets just clone him
+        closed.push(current_node.clone());
+
+        println!("Expanding node {}", current_node);
+
+        //There must be a more rustian solution, but all I know is this works
+        for child_info in node_map[current_node].children_info.clone() {
+            let child_cost: u32 = child_info.0;
+            let child_name: &'static str =  child_info.1;
+
+            // if the child isn't in the open and closed sets
+            if ! open.contains(& child_name) && ! closed.contains(& child_name) {
+                queue.push(child_name,
+                           -((cost[current_node] + child_cost +
+                              node_map[child_name].value) as i32));
+                open.push(child_name);
+                cost.insert(child_name, cost[current_node] + child_cost);
+                origin.insert(child_name, current_node);
+            }
+        }
     }
 
-    return true;
+    print_vec("open", open);
+    print_vec("closed", closed);
 
+    return ret;
 }
 
 pub fn bfs(start_node: &'static str, goal_states: Vec<&'static str>,
@@ -194,10 +259,12 @@ pub fn bestfs(start_node: &'static str, goal_states: Vec<&'static str>,
 pub fn A_star(start_node: &'static str, goal_states: Vec<&'static str>,
            node_map: HashMap<&'static str, Node<'static>>) -> bool {
     println!("Running A* search");
-    return generic_search(start_node, goal_states, "A*", node_map);
+    return A_star_search(start_node, goal_states, "A*", node_map);
 }
 
 pub fn SMA_star(start_node: &'static str, goal_states: Vec<&'static str>,
            node_map: HashMap<&'static str, Node<'static>>) -> bool {
+    println!("Running SMA* search");
+
     return false;
 }

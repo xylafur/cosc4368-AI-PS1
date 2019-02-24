@@ -13,6 +13,8 @@ fn main(){
 
     //bfs("S", goals, node_map);
     //dfs("S", goals, node_map);
-    bestfs("S", goals, node_map);
+    //bestfs("S", goals, node_map);
+    A_star("S", goals, node_map);
+    //SMA_start("S", goals, node_map);
 
 }

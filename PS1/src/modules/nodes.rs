@@ -1,15 +1,19 @@
 use std::collections::HashMap;
 
 fn get_node_defs() -> Vec<&'static str> {
-    let node_defs: Vec<&'static str> = vec!["F 9 1 D 4",
-                                            "S 10 3 A 5 B 8 F 9",
-                                            "B 8 2 E 4 G2 9",
-                                            "G2 0 1 B 8",
-                                            "H 2 1 G2 1",
-                                            "E 4 2 H 1 G2 5",
-                                            "A 5 2 D 6 C 3",
+    let node_defs: Vec<&'static str> = vec!["S 10 3 A 3 B 7 F 2",
+
+                                            "A 5 2 D 6 C 1",
+                                            "F 9 1 D 4",
+                                            "B 8 2 E 1 G2 9",
+
+                                            "D 2 2 G1 6 B 3",
                                             "C 3 2 S 2 D 4",
-                                            "D 2 2 G1 6 B 8",
+
+                                            "E 4 2 H 1 G2 5",
+                                            "G2 0 1 B 8",
+
+                                            "H 2 1 G2 1",
                                             "G1 0 1 C 2"
                                            ];
     return node_defs;
