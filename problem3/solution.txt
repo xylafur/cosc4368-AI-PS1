@@ -1,0 +1,52 @@
+a) Algorithm A* does not terminate until a goal node is selected for expansion.
+   However, a path to a goal node might be reached long before that node is
+   selected for expansion1. Why not terminating as soon as the goal node is
+   found? Illustrate your answer with an example!
+
+
+    Even though a goal node is found, there is still the possiblity that there
+    is a better path to another goal node or even that same goal node.  Since
+    the heuristic will underestimate the cost of a particular node to the goal
+    node, some nodes may significantly underestimate the cost to the goal state
+    causing them to be expanded sooner, even though they don't actually contain
+    the best path.
+
+    In the attached picture, we will expand nodes in this order:
+        expanded node   |       open list
+        S               |       [(A, 10), (B, 12)]
+        A               |       [(C, 11), (B, 12)]
+        C               |       [(B, 12), (G (from A), 13)]
+        B               |       [(D, 9), (G (from A), 13)]
+        D               |       [(G (from D), 10), (G (from A), 13)]
+        G (from D)      |
+
+
+
+b) A* is not guaranteed to find the optimal solution in the case that the
+   function h(s) overestimates the true cost from getting from s to a goal
+   state. Give a state space2 (describe it similarly to the seach space in
+   problem 2) including a single initial state S and a single goal state G for
+   which A* will not find the optimal solution; indicate the solution
+
+    In the Depicted graph, the solution that would be founded by A* is not the
+    optimal solution.
+
+    A* will expand nodes in this order
+        Expanded: S, A, C, D, F, G1
+
+    resulting in the following solution:
+        S -> A -> D -> G1
+
+    This solution has a cost of
+        3 + 6 + 6 = 15
+
+    However, the actual optimal solution for this graph is:
+        S -> B -> E -> H -> G2
+
+    This solution has a cost of:
+        7 + 1 + 1 + 1 = 10
+
+    The reason that this solution is not chosen is because B over estimates the
+    cost to a goal state.  In reality, the minimum distance from B to the goal
+    G2 is only 3 away, it overestimates by a significant amount and is not
+    chosen as the solution by A* as a result!

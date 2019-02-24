@@ -64,7 +64,7 @@ fn choose_node(search_func: &'static str, open_list: &mut Vec<&'static str>,
         },
         "bestfs" => {
             if open_list.len() == 0 {
-                println!("Found empty open list!");
+                //println!("Found empty open list!");
                 return "";
             }
             let mut min_name: &'static str = node_map[open_list[0]].name;
@@ -79,7 +79,7 @@ fn choose_node(search_func: &'static str, open_list: &mut Vec<&'static str>,
                     min_name = each;
                 }
             }
-            println!("Found min: {}", min_name);
+            //println!("Found min: {}", min_name);
 
             return min_name;
 

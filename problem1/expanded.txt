@@ -1,0 +1,24 @@
+Breadth First Search:
+    Expanded: S, F, B, A, D, G2
+    Open: G1, C, E
+    Closed: S, F, B, A, D
+
+Depth First Search:
+    Expanded: S, A, D, G1
+    Open: F, B, C
+    Closed: S, A, D
+
+Best First Search:
+    Expanded: S, A, D, G1
+    Open: S, F, B, A, C, D, G1
+    Closed: S, A, D
+
+A* Search:
+    Expanded: S, A, C, D, F, G1
+    Open: B
+    Closed: S, A, C, D, F
+
+SMA* Search:
+    Expanded: S, A, F, B, A, C, D, S, D, G1
+    Open: A, C, D
+    Closed: S
