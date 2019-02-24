@@ -1,3 +1,6 @@
+extern crate priority_queue;
+use priority_queue::PriorityQueue;
+
 use std::collections::HashMap;
 use crate::modules::nodes::*;
 
@@ -128,6 +131,45 @@ fn generic_search(start_node: &'static str, goal_states: Vec<&'static str>,
     return ret;
 }
 
+fn queue_empty(queue: PriorityQueue<&'static str, u32>) -> bool {
+
+}
+
+fn A_star_search(start_node: &'static str, goal_states: Vec<&'static str>,
+                 search_func: &'static str,
+                 node_map: HashMap<&'static str, Node<'static>>) -> bool {
+
+    /*  Put the starting node into our priority queue
+     *  keep track of who each node came from, and the total cost up to this node
+     *
+     *  while our prioirity queue is not empty
+     *      get the next from the prioirity queue
+     *
+     *      if its a goal state return
+     *
+     *      iterate through each of this current node's neighbors
+     *          if we haven't added it to our cost so far dict or we have and
+     *          this distance is less, add it to the queue
+     *              the cost for the priority queue is the cost to that node
+     *              plus the supposed cost to the goal node
+     */
+
+    let mut queue: PriorityQueue<&'static str, u32> =  PriorityQueue::new();
+    let mut cost: HashMap<&'static str, u32> = HashMap::new();
+    let mut origin: HashMap<&'static str, u32> = HashMap::new();
+
+    queue.push(start_node, 0);
+    cost.insert(start_node, 0);
+    origin.insert(start_node, 0);
+
+    while ! queue_empty(queue){
+
+    }
+
+    return true;
+
+}
+
 pub fn bfs(start_node: &'static str, goal_states: Vec<&'static str>,
            node_map: HashMap<&'static str, Node<'static>>) -> bool {
     println!("Running Breadth First Search!");
@@ -147,4 +189,15 @@ pub fn bestfs(start_node: &'static str, goal_states: Vec<&'static str>,
     println!("Running Best First Search!");
 
     return generic_search(start_node, goal_states, "bestfs", node_map);
+}
+
+pub fn A_star(start_node: &'static str, goal_states: Vec<&'static str>,
+           node_map: HashMap<&'static str, Node<'static>>) -> bool {
+    println!("Running A* search");
+    return generic_search(start_node, goal_states, "A*", node_map);
+}
+
+pub fn SMA_star(start_node: &'static str, goal_states: Vec<&'static str>,
+           node_map: HashMap<&'static str, Node<'static>>) -> bool {
+    return false;
 }
