@@ -1,9 +1,10 @@
 use std::collections::HashMap;
+use crate::modules::util::*;
 
 pub struct Node <'a> {
     pub name: &'a str,
-    pub lat: f32,
-    pub long: f32,
+    pub lat: f64,
+    pub long: f64,
     pub neighbors_names: Vec<&'a str>,
     pub neighbors_dist: Vec<u32>,
 }
@@ -27,9 +28,13 @@ impl Node <'static>{
         return 0;
     }
 
-    pub fn new(name: &'static str, lat: f32, long: f32) -> Node<'static> {
+    pub fn new(name: &'static str, lat: f64, long: f64) -> Node<'static> {
         return Node {name: name, lat: lat, long: long,
                      neighbors_names: Vec::new(), neighbors_dist: Vec::new() };
+    }
+
+    pub fn heuristic(&self, other: &Node<'static>) -> u32 {
+        return haversine_mi(self.lat, self.long, other.lat, other.long) as u32;
     }
 }
 
