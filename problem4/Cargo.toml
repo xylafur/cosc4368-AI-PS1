@@ -1,0 +1,8 @@
+[package]
+name = "problem4"
+version = "0.1.0"
+authors = ["Kesley Richardson <james@jkesley.com>"]
+edition = "2018"
+
+[dependencies]
+priority-queue = "0.5.2"
