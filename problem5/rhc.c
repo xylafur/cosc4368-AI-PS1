@@ -81,6 +81,8 @@ int is_better_neighbor(double sp [3], double ** neighbors, int num_neighbors){
     return 0;
 }
 
+#define STATUS_UPDATE_COUTNER 10000000
+
 void RHC(double sp [3], int p, double r, int seed){
     unsigned long ii = 0;
     double current [3] = {sp[0], sp[1], sp[2]};
@@ -94,6 +96,14 @@ void RHC(double sp [3], int p, double r, int seed){
     while(1) {
         int better = 0;
         double ** neighbors = malloc(p * sizeof(double*));
+
+        // this is just for those really long runs.. just to sanity check I
+        // guess
+        if(ii != 0 && ii % STATUS_UPDATE_COUTNER == 0){
+            printf("Status update (iteration %lu):\n", ii);
+            printf("    f(%lf, %lf, %lf) = %lf\n", current[0], current[1],
+                                               current[2], eval(current));
+        }
 
         ii++;
 
@@ -143,12 +153,14 @@ int main(){
                 for(int ll = 0 ; ll < 3; ll++){
                     printf("Iteration: %d\n", ll + 1);
                     int seed = (int)rand();
+
+                    time_t start = time(NULL);
                     RHC(sp, p, r, seed);
+                    time_t end = time(NULL);
+                    printf("Took %d seconds to complete\n",
+                           (unsigned int)(end - start));
                 }
             }
-
         }
     }
-
-
 }
