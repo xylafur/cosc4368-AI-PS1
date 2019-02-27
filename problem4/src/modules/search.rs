@@ -65,5 +65,7 @@ pub fn a_star(start: &'static str, end: &'static str,
         }
     }
 
+    println!("Cost: {}", cost[end]);
+
     return get_path_from_origin_map(end, &start, &origin);
 }

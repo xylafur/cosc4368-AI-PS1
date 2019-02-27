@@ -7,3 +7,5 @@ run: out
 clean:
 	rm out
 
+python:
+	python3 rhc.py

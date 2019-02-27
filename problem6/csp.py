@@ -125,7 +125,7 @@ def csp(unallocated_variables, unallocated_values, mapping):
                              constraints])
         if all_satisfied:
             print(mapping)
-        return all_satisfied
+        return False#all_satisfied
 
     variable = unallocated_variables.pop(0)
 
