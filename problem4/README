@@ -1,0 +1,11 @@
+You need both rust and cargo to actually run this code.
+
+If you are actually going to run this code, here is how to install rust and
+cargo on redhat (because thats what all the UH servers are and I assume what
+you'll be using) (you will obviously need super user permissions):
+
+# subscription-manager repos --enable rhel-7-server-devtools-rpms
+# yum install rust-toolset-7
+
+
+Then after rust is installed, run `cargo run` to run the program
