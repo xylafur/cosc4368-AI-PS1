@@ -96,13 +96,14 @@ def run_RHC(sp, p, r, num_runs=5):
     return results
 
 def main(vals=None):
-    if vals:
-        run_RHC(vals[0], vals[1], vals[2])
-        exit()
-
     sps = ((0.5, 0.5, 0.5), (0,0.5,1), (0.9, 0.6, 0.3))
     ps = [20]#, 100)
     rs = (0.02, 0.05)
+
+    if vals:
+        for sp in sps:
+           run_RHC(sp, vals[0], vals[1])
+        exit()
 
     ii = 0
     for sp in sps:
@@ -114,6 +115,6 @@ def main(vals=None):
 
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) == 4:
-        main([float(each) for each in sys.argv[1:]])
+    if len(sys.argv) == 3:
+        main((int(sys.argv[1]), float(sys.argv[2])))
     main()
