@@ -38,14 +38,13 @@ def get_best_neighbor(sp: (float, float, float),
     vals = get_neighbor_vals(neighbors)
     best_index, best_val = 0, vals[0]
     #bad name for this function but meh
-    sp_val = get_neighbor_val(sp)
 
     for ii in range(len(vals)):
         if vals[ii] > best_val:
             best_val = vals[ii]
             best_index = ii
 
-    return neighbors[ii]
+    return neighbors[best_index]
 
 def RHC(sp: (float, float, float), p: int, r: float, seed: int)             \
                                         -> (int, float, (float, float, float)):
@@ -69,7 +68,12 @@ def RHC(sp: (float, float, float), p: int, r: float, seed: int)             \
         if not is_better_neighbor(sp, neighbors):
             break
 
-        sp = get_best_neighbor(sp, neighbors)
+        best = get_best_neighbor(sp, neighbors)
+        assert(get_neighbor_val(best) > get_neighbor_val(sp))
+        sp = best
+
+        if ii % 10000 == 0:
+            print(sp, get_neighbor_val(sp))
 
     print(ii)
     return sp
@@ -85,20 +89,31 @@ def run_RHC(sp, p, r, num_runs=5):
 
         print("Using seed: {}, ".format(seed), end="")
         results.append(RHC(sp, p, r, seed))
-        print("Result: {}\n".format(results[-1]))
+        print("Result: {}, value: {}\n".format(results[-1],
+                                               get_neighbor_val(results[-1])))
 
     print("\n\n")
     return results
 
-def main():
+def main(vals=None):
+    if vals:
+        run_RHC(vals[0], vals[1], vals[2])
+        exit()
+
     sps = ((0.5, 0.5, 0.5), (0,0.5,1), (0.9, 0.6, 0.3))
     ps = [20]#, 100)
     rs = (0.02, 0.05)
 
+    ii = 0
     for sp in sps:
         for p in ps:
             for r in rs:
+                print("Run number: {}".format(ii))
+                ii += 1
                 run_RHC(sp, p, r)
 
 if __name__ == '__main__':
+    import sys
+    if len(sys.argv) == 4:
+        main([float(each) for each in sys.argv[1:]])
     main()
