@@ -60,7 +60,9 @@ def RHC(sp: (float, float, float), p: int, r: float, seed: int)             \
                                 the value of the solution
                                 another tuple containing the values of x,y,z
     """
+    ii = 0
     while True:
+        ii += 1
         neighbors = generate_neighbors(sp, r, p)
 
         #if we didn't find any better places to move, just stop
@@ -69,6 +71,7 @@ def RHC(sp: (float, float, float), p: int, r: float, seed: int)             \
 
         sp = get_best_neighbor(sp, neighbors)
 
+    print(ii)
     return sp
 
 def run_RHC(sp, p, r, num_runs=5):
@@ -89,7 +92,7 @@ def run_RHC(sp, p, r, num_runs=5):
 
 def main():
     sps = ((0.5, 0.5, 0.5), (0,0.5,1), (0.9, 0.6, 0.3))
-    ps = (20, 100)
+    ps = [20]#, 100)
     rs = (0.02, 0.05)
 
     for sp in sps:
