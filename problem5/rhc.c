@@ -35,6 +35,15 @@ void generate_neighbors(double sp[3], double ** neighbors, int p, double r){
     }
 }
 
+void print_neighbors(double ** neighbors, int num_neighbors){
+    for(int ii = 0; ii < num_neighbors; ii++){
+        printf("%d: f(%lf, %lf, %lf) = %lf\n", ii, neighbors[ii][0],
+                                               neighbors[ii][1],
+                                               neighbors[ii][2],
+                                               eval(neighbors[ii]));
+    }
+}
+
 void free_neighbors(double ** neighbors, int num_neighbors){
     //printf("Freeing neighbors\n");
     for(int ii = 0; ii < num_neighbors; ii++){
@@ -92,6 +101,7 @@ void RHC(double sp [3], int p, double r, int seed){
         //                                       current[2], eval(current));
 
         generate_neighbors(current, neighbors, p, r);
+        //print_neighbors(neighbors, p);
 
         if(is_better_neighbor(current, neighbors, p)){
             better = 1;
@@ -106,7 +116,8 @@ void RHC(double sp [3], int p, double r, int seed){
         }
     }
     printf("Took %lu iterations\n", ii);
-    printf("f(%f, %f, %f) = %f\n", current[0], current[1], current[2], eval(current));
+    printf("f(%f, %f, %f) = %f\n\n", current[0], current[1], current[2],
+                                     eval(current));
 }
 
 
@@ -118,6 +129,7 @@ int main(){
     double rs [2] = {0.02, 0.05};
 
 
+    srand(time(NULL));
     for(int ii = 0; ii < 3; ii++){
         for(int jj = 0; jj < 2; jj++){
             for(int kk = 0; kk < 2; kk++){
@@ -128,12 +140,13 @@ int main(){
 
                 int p = ps[jj];
                 double r = rs[kk];
-
-                srand(time(NULL));
-                int seed = (int)rand();
-
-                RHC(sp, p, r, seed);
+                for(int ll = 0 ; ll < 3; ll++){
+                    printf("Iteration: %d\n", ll + 1);
+                    int seed = (int)rand();
+                    RHC(sp, p, r, seed);
+                }
             }
+
         }
     }
 
