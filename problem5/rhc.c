@@ -131,7 +131,26 @@ void RHC(double sp [3], int p, double r, int seed){
 }
 
 
-int main(){
+int main(int argc, char * argv[]){
+    if(argc == 6){
+        double sp [3] = {atof(argv[1]), atof(argv[2]), atof(argv[3])};
+        int p = atoi(argv[4]);
+        double r = atof(argv[5]);
+        int seed = (int)rand();
+
+        time_t start = time(NULL);
+        RHC(sp, p, r, seed);
+        time_t end = time(NULL);
+        printf("Took %d seconds to complete\n",
+               (unsigned int)(end - start));
+
+        return 0;
+
+    }else if(argc != 1){
+        printf("Invalid usage!\n");
+        printf("Usage: %s <sp0 sp1 sp2> p r\n", argv[0]);
+    }
+
     double sps [3][3] = {{0.5, 0.5, 0.5},
                         {0.0, 0.5, 1.0},
                         {0.9, 0.6, 0.3}};
