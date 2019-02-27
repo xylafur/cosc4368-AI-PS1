@@ -1,0 +1,142 @@
+Script started on 2019-02-27 11:22:37-06:00 [TERM="xterm-termite" TTY="/dev/pts/0" COLUMNS="110" LINES="62"]
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 491961389
+Took 8 iterations
+f(0.416259, 0.450098, 0.415510) = 0.041846
+
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 1645429897
+Took 11 iterations
+f(0.360650, 0.376996, 0.339937) = 0.051946
+
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 740738585
+Took 15 iterations
+f(0.314306, 0.327046, 0.295874) = 0.055591
+
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 1674266679
+Took 6 iterations
+f(0.379462, 0.396502, 0.313331) = 0.057879
+
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 1738875297
+Took 5 iterations
+f(0.380629, 0.387690, 0.322546) = 0.054153
+
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 1530473537
+Took 12 iterations
+f(0.128484, 0.238687, 0.146313) = 0.080721
+
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 1625531201
+Took 10 iterations
+f(0.381995, 0.385094, 0.348326) = 0.048847
+
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 659888070
+Took 14 iterations
+f(0.325164, 0.324452, 0.287862) = 0.054386
+
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 1472684881
+Took 19 iterations
+f(0.245016, 0.280163, 0.246839) = 0.062289
+
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 301204585
+Took 7 iterations
+f(0.296782, 0.347145, 0.260187) = 0.068313
+
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 1591585309
+Took 9 iterations
+f(0.183492, 0.295027, 0.196720) = 0.081866
+
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 1715503793
+Took 7 iterations
+f(0.285677, 0.360443, 0.264208) = 0.072578
+
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 1656787601
+Took 12891 iterations
+f(-145.185374, 188.095720, 188.080468) = 60593167800444.242188
+
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 4172022
+Took 18615 iterations
+f(-208.998619, 271.407487, 271.376929) = 544857235021605.437500
+
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 1600326170
+Took 8782 iterations
+f(-98.872280, 127.898994, 127.871099) = 6001667935254.936523
+
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 1335743958
+Took 17740 iterations
+f(-497.935323, 644.879851, 644.836295) = 98413308076848832.000000
+
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 2050080439
+Took 23148 iterations
+f(-649.720786, 844.552367, 844.503869) = 493909489410067200.000000
+
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 2035682133
+Took 31568 iterations
+f(-885.569224, 1147.678009, 1147.662492) = 3124054307175153664.000000
+
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.020000
+Using seed 379047868
+^Z^Z
+
+^Z
+
+
+
+
+^Z^Z^Z^Z^Zz^Z
+
+^C
+Script done on 2019-02-27 11:54:16-06:00 [COMMAND_EXIT_CODE="130"]
