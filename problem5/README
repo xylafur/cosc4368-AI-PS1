@@ -1,1 +1,2 @@
-Run `make` to run this code.  It will automatically invoke python 3 for you
+Run `make` to run this code.  It will automatically invoke first gcc to compile
+the program and then will execute the linked object.

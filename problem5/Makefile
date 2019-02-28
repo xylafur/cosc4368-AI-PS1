@@ -1,11 +1,8 @@
-out:
-	gcc rhc.c -o out
-
 run: out
 	./out
 
+out:
+	gcc rhc.c -o out
+
 clean:
 	rm out
-
-python:
-	python3 rhc.py

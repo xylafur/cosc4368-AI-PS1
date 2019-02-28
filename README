@@ -1,0 +1,5 @@
+The actual report is in the file named 'report.pdf'
+
+The solutions to all of the problems are also in their directories though.
+Those directories also contain the source code as well as instructions on how
+to build / run the code (when in doubt just run `make`).

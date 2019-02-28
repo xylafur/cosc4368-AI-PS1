@@ -122,8 +122,8 @@ void RHC(double sp [3], int p, double r, int seed){
             break;
         }
     }
-    printf("Took %lu iterations\n", ii);
-    printf("f(%f, %f, %f) = %f\n\n", current[0], current[1], current[2],
+    printf("%lu\n", ii);
+    printf("(%f, %f, %f)\n%f\n\n", current[0], current[1], current[2],
                                      eval(current));
 }
 
@@ -179,8 +179,8 @@ int main(int argc, char * argv[]){
                     time_t start = time(NULL);
                     RHC(sp, p, r, seed);
                     time_t end = time(NULL);
-                    printf("Took %d seconds to complete\n",
-                           (unsigned int)(end - start));
+                    //printf("Took %d seconds to complete\n",
+                    //       (unsigned int)(end - start));
                 }
             }
         }

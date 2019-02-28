@@ -1,0 +1,19 @@
+cargo build
+cargo run
+Cost: 1145
+Minneapolis
+St. Louis
+Houston
+
+Cost: 1891
+San Francisco
+Salt Lake City
+Denver
+Chicago
+
+Cost: 2464
+New York
+Chicago
+Denver
+Los Angeles
+
