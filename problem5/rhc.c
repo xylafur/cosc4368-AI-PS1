@@ -10,21 +10,23 @@ double equation(double x, double y, double z){
 }
 
 double eval(double point [3]){
-    //printf("Evaling (%f, %f, %f)\n", point[0], point[1], point[2]);
     return equation(point[0], point[1], point[2]);
 }
 
-void generate_neighbor(double sp[3], double new[3] , double r){
-    //printf("Generating Neighbor\n");
-    double z1 = (((double)rand() / (double)RAND_MAX) * 2 * r) - r;
-    double z2 = (((double)rand() / (double)RAND_MAX) * 2 * r) - r;
-    double z3 = (((double)rand() / (double)RAND_MAX) * 2 * r) - r;
+double get_valid_value(double p, double r){
+    double z = (((double)rand() / (double)RAND_MAX) * 2 * r) - r;
 
-    //printf("sp = (%f, %f, %f)\n", sp[0], sp[1], sp[2]);
-    new[0] = sp[0] + z1;
-    new[1] = sp[2] + z2;
-    new[2] = sp[2] + z3;
-    //printf("new = (%f, %f, %f)\n", new[0], new[1], new[2]);
+    while (p + z > 1 || p + z < 0){
+        z = (((double)rand() / (double)RAND_MAX) * 2 * r) - r;
+    }
+
+    return p + z;
+}
+
+void generate_neighbor(double sp[3], double new[3] , double r){
+    new[0] = get_valid_value(sp[0], r);
+    new[1] = get_valid_value(sp[1], r);
+    new[2] = get_valid_value(sp[2], r);
 }
 
 void generate_neighbors(double sp[3], double ** neighbors, int p, double r){
@@ -45,7 +47,6 @@ void print_neighbors(double ** neighbors, int num_neighbors){
 }
 
 void free_neighbors(double ** neighbors, int num_neighbors){
-    //printf("Freeing neighbors\n");
     for(int ii = 0; ii < num_neighbors; ii++){
         free(neighbors[ii]);
     }
@@ -71,7 +72,6 @@ void copy_best_neighbor(double new [3], double ** neighbors, int num_neighbors){
 int is_better_neighbor(double sp [3], double ** neighbors, int num_neighbors){
     assert(neighbors != 0);
     double sp_val = eval(sp);
-    //printf("Evaled sp: %f\n", sp_val);
     for(int ii = 0; ii < num_neighbors; ii++){
         assert(neighbors[ii] != 0);
         if(eval(neighbors[ii]) > sp_val){
@@ -107,9 +107,6 @@ void RHC(double sp [3], int p, double r, int seed){
 
         ii++;
 
-        //printf("Current: (%f, %f, %f) = %f\n", current[0], current[1],
-        //                                       current[2], eval(current));
-
         generate_neighbors(current, neighbors, p, r);
         //print_neighbors(neighbors, p);
 
@@ -136,19 +133,25 @@ int main(int argc, char * argv[]){
         double sp [3] = {atof(argv[1]), atof(argv[2]), atof(argv[3])};
         int p = atoi(argv[4]);
         double r = atof(argv[5]);
-        int seed = (int)rand();
 
-        time_t start = time(NULL);
-        RHC(sp, p, r, seed);
-        time_t end = time(NULL);
-        printf("Took %d seconds to complete\n",
-               (unsigned int)(end - start));
+        for(int ii = 0; ii < 3 ; ii ++){
+            printf("Iteration: %d\n", ii+1);
+            int seed = (int)rand();
+
+            time_t start = time(NULL);
+            RHC(sp, p, r, seed);
+            time_t end = time(NULL);
+            printf("Took %d seconds to complete\n",
+                   (unsigned int)(end - start));
+        }
 
         return 0;
 
     }else if(argc != 1){
         printf("Invalid usage!\n");
         printf("Usage: %s <sp0 sp1 sp2> p r\n", argv[0]);
+
+        return 1;
     }
 
     double sps [3][3] = {{0.5, 0.5, 0.5},

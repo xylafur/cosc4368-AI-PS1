@@ -1,0 +1,325 @@
+Script started on 2019-02-27 21:05:35-06:00
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 1373393620
+Took 45 iterations
+f(0.540402, 0.992467, 0.000322) = 0.424368
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 1863861428
+Took 35 iterations
+f(0.433036, 0.894626, 0.002120) = 0.351070
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.020000
+Using seed 702642792
+Took 42 iterations
+f(0.452406, 0.950782, 0.000457) = 0.382342
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 1913125280
+Took 23 iterations
+f(0.432491, 0.975711, 0.002512) = 0.387533
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 815240585
+Took 17 iterations
+f(0.452597, 0.997964, 0.007433) = 0.398929
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=20, r=0.050000
+Using seed 734902392
+Took 19 iterations
+f(0.604772, 0.997836, 0.013994) = 0.429921
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 1584695970
+Took 58 iterations
+f(0.678474, 0.997942, 0.001088) = 0.461991
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 2103826214
+Took 35 iterations
+f(0.442093, 0.996836, 0.000647) = 0.400993
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.020000
+Using seed 959330739
+Took 56 iterations
+f(0.692418, 0.997141, 0.000418) = 0.465876
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 2034873363
+Took 21 iterations
+f(0.700586, 0.997679, 0.000750) = 0.467918
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 484922554
+Took 22 iterations
+f(0.788068, 0.990461, 0.000136) = 0.486677
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.500000, 0.500000, 0.500000)
+Using p=100, r=0.050000
+Using seed 458208297
+Took 21 iterations
+f(0.681294, 0.995398, 0.000757) = 0.461615
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 1464703723
+Took 35 iterations
+f(0.005059, 0.997555, 0.998779) = 0.658957
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 1900394
+Took 35 iterations
+f(0.008847, 0.994254, 0.989401) = 0.631558
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.020000
+Using seed 960960043
+Took 34 iterations
+f(0.002227, 0.994285, 0.997215) = 0.655010
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 1255869445
+Took 15 iterations
+f(0.010152, 0.977390, 0.989290) = 0.605451
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 1257285874
+Took 14 iterations
+f(0.000798, 0.952089, 0.993614) = 0.588850
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=20, r=0.050000
+Using seed 943511284
+Took 18 iterations
+f(0.005806, 0.999880, 0.991542) = 0.647807
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.020000
+Using seed 2133293146
+Took 34 iterations
+f(0.001139, 0.999591, 0.998332) = 0.666599
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.020000
+Using seed 432117898
+Took 30 iterations
+f(0.003704, 0.996612, 0.999791) = 0.661322
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.020000
+Using seed 2086583982
+Took 31 iterations
+f(0.002340, 0.998526, 0.999963) = 0.666429
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.050000
+Using seed 1080896940
+Took 14 iterations
+f(0.004933, 0.997721, 0.995731) = 0.653648
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.050000
+Using seed 368868003
+Took 13 iterations
+f(0.004940, 0.995083, 0.999249) = 0.656303
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.500000, 1.000000)
+Using p=100, r=0.050000
+Using seed 383983922
+Took 15 iterations
+f(0.001188, 0.998753, 0.997205) = 0.663118
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.020000
+Using seed 1010400139
+Took 20 iterations
+f(0.992913, 0.657378, 0.003039) = 0.355795
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.020000
+Using seed 444288086
+Took 20 iterations
+f(0.993702, 0.678729, 0.000065) = 0.364753
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.020000
+Using seed 690390448
+Took 23 iterations
+f(0.996326, 0.691385, 0.000311) = 0.369277
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.050000
+Using seed 845905628
+Took 9 iterations
+f(0.983129, 0.641867, 0.001320) = 0.348119
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.050000
+Using seed 454282651
+Took 8 iterations
+f(0.989013, 0.599917, 0.006773) = 0.335661
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=20, r=0.050000
+Using seed 450877722
+Took 14 iterations
+f(0.983432, 0.952210, 0.000111) = 0.508563
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.020000
+Using seed 276767238
+Took 35 iterations
+f(0.984048, 0.997033, 0.000941) = 0.540237
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.020000
+Using seed 1471958922
+Took 31 iterations
+f(0.999868, 0.996547, 0.000762) = 0.544227
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.020000
+Using seed 262909125
+Took 30 iterations
+f(0.992419, 0.992493, 0.000085) = 0.540372
+
+Took 0 seconds to complete
+Iteration: 1
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.050000
+Using seed 2130733187
+Took 13 iterations
+f(0.980217, 0.995841, 0.000480) = 0.539086
+
+Took 0 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.050000
+Using seed 408721027
+Took 16 iterations
+f(0.997108, 0.999019, 0.001503) = 0.544189
+
+Took 0 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.900000, 0.600000, 0.300000)
+Using p=100, r=0.050000
+Using seed 1340557658
+Took 13 iterations
+f(0.954847, 0.995291, 0.000713) = 0.531817
+
+Took 0 seconds to complete
+
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.000000, 0.000000)
+Using p=-727379968, r=0.500000
+Using seed 1804289383
+out: rhc.c:33: generate_neighbors: Assertion `neighbors != 0' failed.
+Aborted (core dumped)
+[yelsek@apollo problem5]$ ./out 0.0 0.0 0.0 100000000 .5
+Iteration: 1
+Evaluating with starting poition (0.000000, 0.000000, 0.000000)
+Using p=100000000, r=0.500000
+Using seed 1804289383
+Took 7 iterations
+f(0.999476, 0.999703, 0.000107) = 0.547478
+
+Took 85 seconds to complete
+Iteration: 2
+Evaluating with starting poition (0.000000, 0.000000, 0.000000)
+Using p=100000000, r=0.500000
+Using seed 2109310609
+Took 4 iterations
+f(0.999495, 0.999724, 0.000114) = 0.547487
+
+Took 46 seconds to complete
+Iteration: 3
+Evaluating with starting poition (0.000000, 0.000000, 0.000000)
+Using p=100000000, r=0.500000
+Using seed 1798962515
+Took 5 iterations
+f(0.999427, 0.998698, 0.000055) = 0.546803
+
+Took 56 seconds to complete
+
+Script done on 2019-02-27 21:05:35-06:00
+
+
